@@ -9,12 +9,23 @@ module.exports = {
       colors: {
         primary: "#facc15",
         secondary: "red",
-      },
-      boxShadow: {
-        'dark-sm': '0 4px 8px 6px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)', //White shadow
-        blue: '0 1px 3px 0 rgba(0, 0, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 255, 0.06)', //Blue shadow (for testing purposes)
-      },
+      }
     },
+  },
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#0FCFEC",
+          secondary: "#19D3AE",
+          accent: "#3A4256",
+          neutral: "#3d4451",
+          "base-100": "#ffffff",
+        },
+      },
+      "dark",
+      "cupcake",
+    ],
   },
   plugins: [
     require("daisyui"),

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LightSvg from "../Svg/LightSvg";
 import MoonSvg from "../Svg/MoonSvg";
+import { ThemeContext } from './../ThemeContext/ThemeContext';
 
 const DarkModeToggle = ({
   color = "bg-[#F2F2F2]",
@@ -9,6 +10,7 @@ const DarkModeToggle = ({
   tabIndex = 0,
 }) => {
   const [isOn, setIsOn] = useState(on);
+  const { theme, setTheme } = React.useContext(ThemeContext);
 
   function toggle() {
     setIsOn(!isOn);

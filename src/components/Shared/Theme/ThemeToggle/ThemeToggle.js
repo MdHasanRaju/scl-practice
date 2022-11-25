@@ -1,6 +1,6 @@
-import React from 'react';
-import { FaSun, FaMoon} from "react-icons/fa";
-import { ThemeContext } from '../../../../ThemeContext/ThemeContext';
+import React from 'react'; 
+import { FaSun, FaMoon} from "react-icons/fa"; 
+import { ThemeContext } from './../../ThemeContext/ThemeContext';
 
 
 const Toggle = () => {

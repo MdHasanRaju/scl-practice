@@ -1,6 +1,6 @@
-import { userLoggedOut } from 'features/auth/authSlice';
+import { userLoggedOut } from "features/auth/authSlice";
 import { useState } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import user from "../../../assets/images/user.png";
 import logo from "../../../assets/images/Vector.png";
@@ -8,14 +8,10 @@ import HouseSvg from "../Svg/HouseSvg";
 import MessageSvg from "../Svg/MessageSvg";
 import NotificationSvg from "../Svg/NotificationSvg";
 import UserSvg from "../Svg/UserSvg";
-import DarkModeToggle from "./DarkModeToggle";
+import Toggle from "../Theme/ThemeToggle/ThemeToggle";
+// import DarkModeToggle from "./DarkModeToggle";
 
-// const [showCommunity, setShowCommunity] = useState(false);
-// const toggleCommunity = () => {
-//   setShowCommunity(!showCommunity);
-// };
-
-const Navbar = ({ setIsDarkMode, isDarkMode }) => {
+const Navbar = () => {
   const dispatch = useDispatch();
   const [showBar, setShowBar] = useState(false);
 
@@ -30,8 +26,8 @@ const Navbar = ({ setIsDarkMode, isDarkMode }) => {
 
   return (
     <div
-      className={`${isDarkMode ? "bg-gray-900" : "bg-[#ffffff]"
-        } p-4 pb-0 border-b shadow-lg w-screen bg-[#ffffff] md:flex md:items-center md:justify-between md:pb-2 fixed top-0 z-10 `}
+      className={` dark:bg-gray-900 
+        p-4 pb-0 border-b shadow-lg w-screen bg-[#ffffff] md:flex md:items-center md:justify-between md:pb-2 fixed top-0 z-10 `}
     >
       {/* <!--logo--> */}
       <div className="mb-4 flex items-center justify-between md:mb-0 md:w-[30%] sm:w-[100%]">
@@ -113,25 +109,13 @@ const Navbar = ({ setIsDarkMode, isDarkMode }) => {
             </NavLink>
           </li>
         </ul>
-        
       </nav>
 
       {/* <!--nav--> */}
       <nav className={`${showBar ? "block " : "hidden"} lg:block md:block`}>
         <ul className="list-reset md:flex md:items-center">
-          <DarkModeToggle on={isDarkMode} onToggle={setIsDarkMode} />
-          {/* <label
-            for="default-toggle"
-            class="inline-flex relative items-center cursor-pointer mr-6"
-          >
-            <input
-              type="checkbox"
-              value=""
-              id="default-toggle"
-              class="sr-only peer "
-            />
-            <div class="w-[6.3rem] h-12 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-yellow-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[0] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-12 after:w-12 after:transition-all dark:border-gray-600 peer-checked:bg-yellow-400"></div>
-          </label> */}
+          {/* <DarkModeToggle on={isDarkMode} onToggle={setIsDarkMode} /> */}
+          <Toggle></Toggle>
 
           <div class="dropdown dropdown-end">
             <label
@@ -155,7 +139,11 @@ const Navbar = ({ setIsDarkMode, isDarkMode }) => {
               </li>
 
               <li>
-                <button onClick={() => dispatch(userLoggedOut())} tabIndex="0" className="normal-case border-none btn">
+                <button
+                  onClick={() => dispatch(userLoggedOut())}
+                  tabIndex="0"
+                  className="normal-case border-none btn"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
