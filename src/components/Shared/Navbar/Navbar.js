@@ -113,34 +113,7 @@ const Navbar = ({ setIsDarkMode, isDarkMode }) => {
             </NavLink>
           </li>
         </ul>
-        {/* <ul className="list-reset md:flex md:items-center">
-          <li className="md:ml-4 sm:mt-4 md:mt-0">
-            <div className="indicator">
-              <i class="fa-solid fa-user text-xl"></i>
-              <span class="badge  bg-[#cc1016] border-[#cc1016] p-0 badge-sm indicator-item">
-                +3
-              </span>
-            </div>
-          </li>
-
-          <li className="md:ml-8 sm:mt-4 md:mt-0">
-            <div className="indicator">
-              <i class="fas fa-comment-dots text-xl"></i>
-              <span class="badge bg-[#cc1016] border-[#cc1016] badge-sm p-0 indicator-item">
-                +9
-              </span>
-            </div>
-          </li>
-
-          <li className="md:ml-8 sm:mt-4 md:mt-0">
-            <div class="indicator">
-              <i class="fa-sharp fa-solid fa-bell text-xl"></i>
-              <span class="badge bg-[#cc1016] border-[#cc1016] badge-sm p-0 indicator-item">
-                +9
-              </span>
-            </div>
-          </li>
-        </ul> */}
+        
       </nav>
 
       {/* <!--nav--> */}
