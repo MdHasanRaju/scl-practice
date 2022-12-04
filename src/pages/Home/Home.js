@@ -25,11 +25,10 @@ import PostedStatusThree from "../../components/Home/PostedStatusThree/PostedSta
 import PostedStatusFour from "../../components/Home/PostedStatusFour/PostedStatusFour";
 import PostedStatusFive from "../../components/Home/PostedStatusFive/PostedStatusFive";
 
- /**
-  * @function Home.jsx
-  * @author Mahmudul Hasan
-  **/
-
+/**
+ * @function Home.jsx
+ * @author Mahmudul Hasan
+ **/
 
 const settings = {
   dots: false,
@@ -189,7 +188,7 @@ const storyGalleries = [
   },
 ];
 
-const Home = ({ isDarkMode }) => {
+const Home = () => {
   const [showCommunity, setShowCommunity] = useState(false);
 
   const toggleCommunity = () => {
@@ -198,9 +197,8 @@ const Home = ({ isDarkMode }) => {
 
   return (
     <div
-      className={`${
-        isDarkMode ? "bg-gray-900" : "bg-[#ffffff]"
-      } mt-[75px] dark:bg-red`}
+      className={`dark:bg-gray-900  bg-[#ffffff]
+       mt-[75px] `}
     >
       <div className="px-4 py-6 ">
         <div class="grid grid-cols-6 gap-4 relative">

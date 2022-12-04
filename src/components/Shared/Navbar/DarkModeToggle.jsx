@@ -1,50 +1,79 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import LightSvg from "../Svg/LightSvg";
 import MoonSvg from "../Svg/MoonSvg";
-import { ThemeContext } from './../ThemeContext/ThemeContext';
+import { ThemeContext } from "./../ThemeContext/ThemeContext";
 
-const DarkModeToggle = ({
-  color = "bg-[#F2F2F2]",
-  on = false,
-  onToggle = () => {},
-  tabIndex = 0,
-}) => {
-  const [isOn, setIsOn] = useState(on);
+const DarkModeToggle = () => {
+  // const [isOn, setIsOn] = useState(on);
   const { theme, setTheme } = React.useContext(ThemeContext);
 
-  function toggle() {
-    setIsOn(!isOn);
-    onToggle(!isOn);
-    localStorage.setItem("theme", !isOn);
-  }
+  // function toggle() {
+  //   setIsOn(!isOn);
+  //   onToggle(!isOn); 
+  // }
 
   function handleClick() {
-    toggle();
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+    // toggle();
   }
 
   function handleKeyDown({ key }) {
-    if (key === "Enter") toggle();
+    if (key === "Enter") ;
+    // toggle()
   }
 
   return (
     <div
-      role="checkbox"
-      aria-checked={isOn ? "true" : "false"}
-      tabIndex={0}
+      role="checkbox" 
+      tabIndex="0"
       onKeyDown={handleKeyDown}
       onClick={handleClick}
-      className={`cursor-pointer z-10 w-24 h-11 ${color} rounded-full relative px-1.5 flex items-center mr-6${
-        isOn ? "" : " justify-end"
+      className={`cursor-pointer w-24 h-11 bg-[#F2F2F2] rounded-full relative px-1.5 flex items-center mr-6${
+        theme === 'dark' ? "" : " justify-end"
       }`}
     >
       <div
-        className={`w-8 h-8 rounded-full z-20 absolute transform duration-200 ease-out bg-[#FFD700] left-0.5 ${
-          isOn ? "translate-x-14" : "translate-x-1"
+        className={`w-8 h-8 rounded-full absolute transform duration-300 ease-out bg-[#FFD700] left-0.5 ${
+          theme === 'dark' ? 'translate-x-0' : 'translate-x-[57px]'
         }`}
       />
-      {!isOn ? <LightSvg /> : <MoonSvg />}
+      {
+        theme === 'dark' ? <>
+        <MoonSvg zIndex={`z-30 translate-x-0.5`}/>
+        <LightSvg zIndex={`z-30 translate-x-10`} blurColor={'text-white'}/>
+        </>
+        :
+        <>
+        
+        <LightSvg zIndex={`z-30 translate-x-[12px]`}/>
+        <MoonSvg zIndex={`z-30 -translate-x-[65px]`} blurColor={'text-black-500'}/>
+        </>
+      } 
+     
     </div>
   );
 };
 
 export default DarkModeToggle;
+
+// <div
+//   role="checkbox"
+//   aria-checked={isOn ? "true" : "false"}
+//   tabIndex="0"
+//   onKeyDown={handleKeyDown}
+//   onClick={handleClick}
+//   className={`cursor-pointer z-10 w-24 h-11 bg-[#F2F2F2] rounded-full relative px-1.5 flex items-center mr-6${
+//     isOn ? "" : " justify-end"
+//   }`}
+// >
+//   <div
+//     className={`w-8 h-8 rounded-full z-20 absolute transform duration-200 ease-out bg-[#FFD700] left-0.5 ${
+//       isOn ? "translate-x-14" : "translate-x-1"
+//     }`}
+//   />
+//   {
+//     theme === 'dark' && isOn ? <MoonSvg/>
+//     :
+//     <LightSvg/>
+//   } 
+// </div>

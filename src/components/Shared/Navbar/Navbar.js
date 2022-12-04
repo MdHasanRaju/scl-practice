@@ -9,7 +9,7 @@ import MessageSvg from "../Svg/MessageSvg";
 import NotificationSvg from "../Svg/NotificationSvg";
 import UserSvg from "../Svg/UserSvg";
 import Toggle from "../Theme/ThemeToggle/ThemeToggle";
-// import DarkModeToggle from "./DarkModeToggle";
+import DarkModeToggle from "./DarkModeToggle";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -113,9 +113,9 @@ const Navbar = () => {
 
       {/* <!--nav--> */}
       <nav className={`${showBar ? "block " : "hidden"} lg:block md:block`}>
-        <ul className="list-reset md:flex md:items-center">
-          {/* <DarkModeToggle on={isDarkMode} onToggle={setIsDarkMode} /> */}
-          <Toggle></Toggle>
+        <ul className="list-reset md:flex md:items-center"> 
+          <DarkModeToggle />
+          {/* <Toggle/>  */}
 
           <div class="dropdown dropdown-end">
             <label
