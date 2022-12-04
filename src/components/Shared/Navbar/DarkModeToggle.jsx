@@ -34,19 +34,19 @@ const DarkModeToggle = () => {
     >
       <div
         className={`w-8 h-8 rounded-full absolute transform duration-300 ease-out bg-[#FFD700] left-0.5 ${
-          theme === 'dark' ? 'translate-x-0' : 'translate-x-[57px]'
+          theme === 'dark' ? 'translate-x-0.5' : 'translate-x-[57px]'
         }`}
       />
       {
         theme === 'dark' ? <>
-        <MoonSvg zIndex={`z-30 translate-x-0.5`}/>
+        <MoonSvg zIndex={`z-30 translate-x-1.5`}/>
         <LightSvg zIndex={`z-30 translate-x-10`} blurColor={'text-white'}/>
         </>
         :
         <>
         
         <LightSvg zIndex={`z-30 translate-x-[12px]`}/>
-        <MoonSvg zIndex={`z-30 -translate-x-[65px]`} blurColor={'text-black-500'}/>
+        <MoonSvg zIndex={`z-30 -translate-x-[61px]`} blurColor={'text-black-500'}/>
         </>
       } 
      
